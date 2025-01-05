@@ -193,10 +193,45 @@ Day 15
 
 Day 16
 
-1. Start on Backend. 
-   - Created server.js file
-   - npm init in the backend folder
+1. Start on Backend.
 
+- Created a new monorepo for frontend and backend
+- Created server.js file
+- npm init in the backend folder
+- install following dependencies: ```npm i cors dotenv express jsonwebtoken mongoose multer nodemon razorpay stripe validator cloudinary bcrypt
+- create folder structure: config, controllers, middleware, models, routes
+- What does each folder mean?
+
+  1. config - configuration files (database configs, envs)
+  2. controllers - contains route handlers, business logic
+  3. middleware - custom middleware functions (auth, validation, error handling)
+  4. models - database models/schemas (mongoose)
+  5. routes - API route definitions
+  6. server.js - makin backend application entry point
+
+  In package.json --
+
+- Add server script "server": "nodemon server.js". (for continuously watching changes)
+- Add "type": "module". This will allow us to use the import keyword.
+
+Day 17
+
+1. Create basic express server with a simple "/" endpoint working
+2. Test endpoint with thunder client
+3. Sign in to MongoDB. Create new project. Create new cluster.
+4. create a MONGODB_URI in env file. Use the connection string from mongodb and choose drivers.
+5. Update Network Access from MongoDB to allow access to certain people.
+6. In config folder create new file called mongodb.js to connect to our database using mongoose. A function called connectDB was made.
+7. Update the server.js with connectDB in app config.
+8. Add cloudinary.js in the config folder. Get API key from cloudinary. In cloudinary -> dashboard -> api keys. Created a new one.
+9. Go back to env file. Create new cloudinary api key, secret key and name.
+10. Create a new file called cloudinary.js in config folder. Create a function connectCloudinary to access cloudinary using config()
+11. Add connectCloudinary to server.js under app config.
+12. All our config files are working. We have access to mongodb and cloudaring and server running successfully.
+
+13. Next we can store our data in our database. Create productModel.js in our models folder.
+14. create a productSchema called product
+15. Also create a 
 
 - Testing
 - Accessiblity issues testing
