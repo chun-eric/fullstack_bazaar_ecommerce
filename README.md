@@ -231,7 +231,29 @@ Day 17
 
 13. Next we can store our data in our database. Create productModel.js in our models folder.
 14. create a productSchema called product
-15. Also create a 
+
+Day 17
+
+1. create userModel with userSchema
+2. Create a userController in controllers folder to create routing and business logic for different routes like login, registuer use and admin login
+3. Create a new userRoute.js file in the routes folder. In this file import the functions we created in the userController file. At the endpoints and run each function using express.Router() under a variable called userRouter
+4. In server.js update the api endpoints. `app.use("/api/user", userRouter);` it works
+5. I had trouble here and my server crashed because I didnt attach the .js at the end of the userController when importing into the userRoute.
+6. RegisterUser function made. Validate email, name, password checker. Added a jwt token to be sent back to user.
+7. Tested the route /api/user/register POST method on thunder client. Go to body section and add the template for a new user in json format. `{
+   "name": "John Doe",
+   "email": "johndoe@example.com",
+   "password": "Test1234!"
+   }```
+
+8. Status 201 success. It returns: ```{
+   "success": true,
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3N2I4ZWZlNzEwMWU3NmY3NWM2M2QwOCIsImlhdCI6MTczNjE1MDc4MiwiZXhwIjoxNzM2MjM3MTgyfQ.iew88-ohUwvT5pcGRVal1Qx8gCAmvI135-GrjjpXKuE",
+
+   }```
+
+9. Checked MongoDB browse collections.
+10. Issue the hashed password isnt showing in MongoDB collection.
 
 - Testing
 - Accessiblity issues testing

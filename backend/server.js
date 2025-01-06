@@ -3,6 +3,7 @@ import cors from "cors"; // allows websites to safely communicate with server
 import "dotenv/config"; // manage secret configurations
 import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/cloudinary.js";
+import userRouter from "./routes/userRoute.js";
 
 // App Config
 const app = express(); // create new server
@@ -15,6 +16,8 @@ app.use(express.json()); // allow server to understand JSON data
 app.use(cors());
 
 // API endpoints
+app.use("/api/user", userRouter);
+
 app.get("/", (req, res) => {
   res.send("API working");
 });
