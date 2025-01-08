@@ -255,6 +255,18 @@ Day 17
 9. Checked MongoDB browse collections.
 10. Issue the hashed password isnt showing in MongoDB collection.
 
+Day 18
+
+1. Fixed Issue the hashed password isnt showing in MongoDB collection problem. The issue was
+   the userModel.js didnt have a password key value. In the userSchema we had to add ` password: { type: String, required: true },`
+
+2. Created the loginUser function for when a user logs into the website.
+3. Make sure to validate email and password first. Then validate passwords if it is a match or not with login password and database password.
+4. Test on thunder client. Play around with the email and password. Test on route POST `http://localhost:4000/api/user/login`
+5. Completed the user registration and user login api feature. Phew! That was awesome to learn but difficult.
+
+6. Next we will add products in the controller folder in a file called productController.js
+
 - Testing
 - Accessiblity issues testing
 - Update all Copy
